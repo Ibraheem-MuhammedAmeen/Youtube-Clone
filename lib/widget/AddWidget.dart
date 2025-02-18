@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
-class AddsWidget extends StatefulWidget {
-  const AddsWidget({super.key});
+class AddsWidget extends StatelessWidget {
+  const AddsWidget(
+      {required this.title,
+      required this.imageurl,
+      required this.leading,
+      required this.rating});
+  final String imageurl;
+  final String title;
+  final String leading;
+  final String rating;
 
-  @override
-  State<AddsWidget> createState() => _AddsWidgetState();
-}
-
-class _AddsWidgetState extends State<AddsWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,41 +22,49 @@ class _AddsWidgetState extends State<AddsWidget> {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.asset('assets/images/opay-logo.ico'),
+                child: Image.asset(imageurl),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Row(
+                  Row(
                     children: [
                       Text(
-                        'Install Opay now | Opay',
+                        '$title',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: 17,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 100,
                       ),
                       Icon(Icons.more_vert),
                     ],
                   ),
-                  const Text('Earn up to 15% annual interest on your savings'),
+                  Text('$leading'),
                   RichText(
-                    text: const TextSpan(
+                    text: TextSpan(
                       style: TextStyle(fontSize: 16, color: Colors.black),
                       children: [
+                        const TextSpan(
+                          text: 'Ad .',
+                          style: TextStyle(color: Colors.white),
+                        ),
                         TextSpan(
-                          text: 'Ad .4.4 ',
+                          text: '$rating',
                           style: TextStyle(color: Colors.white54),
                         ),
-                        WidgetSpan(
+                        const WidgetSpan(
                           child:
                               Icon(Icons.star, size: 16, color: Colors.yellow),
+                        ),
+                        const TextSpan(
+                          text: 'FREE',
+                          style: TextStyle(color: Colors.white54),
                         ),
                       ],
                     ),
@@ -62,6 +73,29 @@ class _AddsWidgetState extends State<AddsWidget> {
               )
             ],
           ),
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueGrey, // Change button color
+                foregroundColor: Colors.white, // Text and icon color
+              ),
+              onPressed: () {},
+              child: RichText(
+                text: const TextSpan(children: [
+                  TextSpan(
+                    text: 'Install',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  WidgetSpan(
+                    child: Icon(Icons.download, size: 16, color: Colors.white),
+                  ),
+                ]),
+              ),
+            ),
+          ],
         ),
       ],
     );
