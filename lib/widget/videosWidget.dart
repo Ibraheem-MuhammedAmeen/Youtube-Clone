@@ -98,7 +98,7 @@ class _VideoScreenState extends State<VideoScreen> {
                               fontSize: 17,
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           const Icon(Icons.more_vert),
                         ],
                       ),
@@ -108,19 +108,18 @@ class _VideoScreenState extends State<VideoScreen> {
                           children: [
                             TextSpan(
                               text: '${widget.userName}',
-                              style: TextStyle(color: Colors.white54),
+                              style: const TextStyle(color: Colors.white54),
                             ),
                             const WidgetSpan(
-                              child: SizedBox(
-                                  width: 5), // 👈 Correct way to add spacing
+                              child: SizedBox(width: 5),
                             ),
                             TextSpan(
                               text: "${widget.views}",
-                              style: TextStyle(color: Colors.white54),
+                              style: const TextStyle(color: Colors.white54),
                             ),
                             TextSpan(
                               text: '${widget.days}',
-                              style: TextStyle(color: Colors.white54),
+                              style: const TextStyle(color: Colors.white54),
                             ),
                           ],
                         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:youtube_clone/widget/AddWidget.dart';
+import 'package:youtube_clone/widget/home_shorts.dart';
 import 'package:youtube_clone/widget/videosWidget.dart';
 
 import '../widget/smallCarousel.dart';
@@ -96,6 +97,121 @@ class HomePage extends StatelessWidget {
               userName: 'Netfix Spain',
             ),
           ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 18,
+                ),
+                //padding: const EdgeInsets.all(13.0),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 50,
+                      child: Image.asset('assets/images/shorts_logo.png'),
+                    ),
+                    const SizedBox(width: 5),
+                    const Text(
+                      'Shorts',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                    const Spacer(),
+                    const Icon(Icons.more_vert),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 300, //Ensure video has a fixed height
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(100), // Slight rounding
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: HomeShorts(
+                              videoUrl:
+                                  'assets/videos/shorts/Davies_on_dinosaur.mp4'),
+                        ),
+                      ),
+                    ),
+                    //Text('MMMMM'),
+                    Expanded(
+                      child: Container(
+                        height: 300, //Ensure video has a fixed height
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: HomeShorts(
+                            videoUrl: 'assets/videos/shorts/samsung1.mp4',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 300, //Ensure video has a fixed height
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(100), // Slight rounding
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: HomeShorts(
+                              videoUrl:
+                                  'assets/videos/shorts/MrBeast_Lost.mp4'),
+                        ),
+                      ),
+                    ),
+                    //Text('MMMMM'),
+                    Expanded(
+                      child: Container(
+                        height: 300, //Ensure video has a fixed height
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: HomeShorts(
+                            videoUrl:
+                                'assets/videos/shorts/BusinessmanvsEntrepreneur.mp4',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Container(
+            height: 300, // Ensure video has a fixed height
+            child: VideoScreen(
+              title: 'Flutter Google Map With Live\nLocation Tracking',
+              days: ' 6 months',
+              profilePicUrl: 'assets/images/img.png',
+              videoUrl: 'assets/videos/Flutter_Google_Map.mp4',
+              views: "100K views '",
+              userName: 'Flutter',
+            ),
+          ),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CircularProgressIndicator(),
+            ],
+          )
         ],
       ),
     );
