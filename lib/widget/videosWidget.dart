@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:youtube_clone/screens/watchScreen.dart';
 
 class VideoScreen extends StatefulWidget {
-  VideoScreen({
-    required this.title,
-    required this.days,
-    required this.profilePicUrl,
-    required this.videoUrl,
-    required this.views,
-    required this.userName,
-  });
+  VideoScreen(
+      {required this.title,
+      required this.days,
+      required this.profilePicUrl,
+      required this.videoUrl,
+      required this.views,
+      required this.userName,
+      required this.suscribtion});
   final String videoUrl;
   final String title;
   final String profilePicUrl;
   final String days;
   final String views;
   final String userName;
+  final String suscribtion;
 
   @override
   _VideoScreenState createState() => _VideoScreenState();
@@ -41,7 +43,18 @@ class _VideoScreenState extends State<VideoScreen> {
 
   void _togglePlayPause() {
     setState(() {
-      _controller.value.isPlaying ? _controller.pause() : _controller.play();
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return Watchscreen(
+          videoUrl: widget.videoUrl,
+          profilePicUrl: widget.profilePicUrl,
+          days: widget.days,
+          views: widget.views,
+          userName: widget.userName,
+          title: widget.title,
+          suscribtion: widget.suscribtion,
+        );
+      }));
+      //_controller.value.isPlaying ? _controller.pause() : _controller.play();
     });
   }
 

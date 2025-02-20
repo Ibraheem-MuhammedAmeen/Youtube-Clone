@@ -83,6 +83,7 @@ class HomePage extends StatelessWidget {
               videoUrl: 'assets/videos/video_player.mp4',
               views: "35K views '",
               userName: 'Flutter',
+              suscribtion: '260K',
             ),
           ),
           Container(
@@ -95,6 +96,7 @@ class HomePage extends StatelessWidget {
               videoUrl: 'assets/videos/Money_Heist.mp4',
               views: "2m views '",
               userName: 'Netfix Spain',
+              suscribtion: '570K',
             ),
           ),
           Column(
@@ -204,6 +206,7 @@ class HomePage extends StatelessWidget {
               videoUrl: 'assets/videos/Flutter_Google_Map.mp4',
               views: "100K views '",
               userName: 'Flutter',
+              suscribtion: '260K',
             ),
           ),
           Column(
