@@ -140,8 +140,12 @@ class HomePage extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: HomeShorts(
-                              videoUrl:
-                                  'assets/videos/shorts/Davies_on_dinosaur.mp4'),
+                            videoUrl:
+                                'assets/videos/shorts/Davies_on_dinosaur.mp4',
+                            title: 'Davies on dinosaur',
+                            userName: 'Davies',
+                            profilePicUrl: 'assets/images/davies.png',
+                          ),
                         ),
                       ),
                     ),
@@ -153,6 +157,9 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                           child: HomeShorts(
                             videoUrl: 'assets/videos/shorts/samsung1.mp4',
+                            title: 'Tech news',
+                            userName: 'techTips',
+                            profilePicUrl: 'assets/images/beast.png',
                           ),
                         ),
                       ),
@@ -174,8 +181,11 @@ class HomePage extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: HomeShorts(
-                              videoUrl:
-                                  'assets/videos/shorts/MrBeast_Lost.mp4'),
+                            videoUrl: 'assets/videos/shorts/MrBeast_Lost.mp4',
+                            title: 'How Mr beast lost \$1 Million',
+                            userName: 'Mr Beast',
+                            profilePicUrl: 'assets/images/beast.png',
+                          ),
                         ),
                       ),
                     ),
@@ -188,6 +198,9 @@ class HomePage extends StatelessWidget {
                           child: HomeShorts(
                             videoUrl:
                                 'assets/videos/shorts/BusinessmanvsEntrepreneur.mp4',
+                            title: 'Business vs Entrepreneur',
+                            userName: 'Trading',
+                            profilePicUrl: 'assets/images/business.png',
                           ),
                         ),
                       ),

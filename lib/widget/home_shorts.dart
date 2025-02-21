@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:youtube_clone/screens/homeScreen.dart';
+import 'package:youtube_clone/screens/shortsScreen.dart';
 
 class HomeShorts extends StatefulWidget {
   HomeShorts({
-    // required this.title,
-    //required this.days,
-    //required this.profilePicUrl,
+    required this.title,
     required this.videoUrl,
-    //required this.views,
-    //required this.userName,
+    required this.userName,
+    required this.profilePicUrl,
   });
   final String videoUrl;
-  //final String title;
-  //final String profilePicUrl;
-  //final String days;
-  //final String views;
-  //final String userName;
+  final String title;
+  final String profilePicUrl;
+  final String userName;
 
   @override
   State<HomeShorts> createState() => _HomeShortsState();
@@ -41,7 +39,15 @@ class _HomeShortsState extends State<HomeShorts> {
 
   void _togglePlayPause() {
     setState(() {
-      _controller.value.isPlaying ? _controller.pause() : _controller.play();
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return ShortsScreen(
+          title: widget.title,
+          userName: widget.userName,
+          profilePic: widget.profilePicUrl,
+          videoUrl: widget.videoUrl,
+        );
+      }));
+      //_controller.value.isPlaying ? _controller.pause() : _controller.play();
     });
   }
 

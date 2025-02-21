@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/screens/shortsScreen.dart';
 
 import 'home.dart';
 
@@ -14,7 +15,7 @@ class _HomescreenState extends State<Homescreen> {
 
   final List<Widget> _pages = [
     HomePage(),
-    SearchPage(),
+    ShortsScreen(),
     ProfilePage(),
   ];
 
@@ -76,14 +77,6 @@ class _HomescreenState extends State<Homescreen> {
 }
 
 // Dummy Screens
-
-class SearchPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-        child: Text('🔍 Search Screen', style: TextStyle(fontSize: 24)));
-  }
-}
 
 class ProfilePage extends StatelessWidget {
   @override
